@@ -6,10 +6,13 @@ request(url, (err, response, body) => {
   if (err) throw err;
 
   const data = JSON.parse(body);
-  const { description } = data[0];
-  if (description) {
-    console.log(description);
+  if (!data.length) {
+    return console.log('No breed found');
   }
-
+  const breed = data[0].description;
+  if (breed) {
+    console.log(breed);
+  }
+  
 });
 
