@@ -11,7 +11,7 @@ const fetchBreedDescription = function(breedName, callback) {
     if (breed) {
       return callback(null, breed.description);
     }
-    callback('Failed to find breed');
+    callback('Failed to find breed', null);
   });
 };
 
